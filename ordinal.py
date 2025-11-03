@@ -1,11 +1,10 @@
 import pandas as pd
 
-data = {'college': ['dtu', 'nsut', 'dtu', 'iiitd', 'nsut']}
-df = pd.DataFrame(data)
+df = pd.read_csv('/Users/astitav/Desktop/aims/aims-assignemnts/PlayStation Sales and Metadata (PS3PS4PS5) (Oct 2025).csv')
 
-map = {'dtu': 'good', 'nsut': 'bad', 'iiitd': 'bad'}
+map = {'PS3': '1', 'PS4': '2', 'PS5': '3'}
 
-df['status'] = df['college'].map(map)
+df['status'] = df['Console'].map(map)
 
 print("original data:")
-print(df)
+print(df[['Console','status']])
